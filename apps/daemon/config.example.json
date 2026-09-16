@@ -1,0 +1,19 @@
+{
+  "network": "mainnet",
+  "rpcHttp": "https://rpc.mainnet.arc.io",
+  "factoryAddress": "",
+  "routerAddress": "",
+  "quoteTokenAddress": "0x3600000000000000000000000000000000000000",
+  "targetTokenAddress": "",
+  "amountInUsdc": "5",
+  "minLiquidityUsdc": "1000",
+  "slippagePercent": 20,
+  "maxFeeGwei": 30,
+  "priorityFeeGwei": 1,
+  "pollMs": 250,
+  "dryRun": true,
+  "autoSellEnabled": false,
+  "autoSellAfterValue": 0,
+  "autoSellAfterUnit": "minutes",
+  "autoSellAtMultiple": 0
+}

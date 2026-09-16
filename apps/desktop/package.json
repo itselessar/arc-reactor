@@ -1,0 +1,52 @@
+{
+  "name": "@reactor/desktop",
+  "version": "1.0.0",
+  "description": "Open source Arc chain liquidity sniper",
+  "author": "REACTOR contributors",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "dist:win": "npm run build && electron-builder --win nsis portable",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "viem": "^2.37.5",
+    "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "electron": "44.4.1",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vitest": "^5.0.1"
+  },
+  "build": {
+    "appId": "io.reactor.arc",
+    "productName": "REACTOR",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "REACTOR-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

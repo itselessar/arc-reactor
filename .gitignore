@@ -1,0 +1,11 @@
+node_modules/
+dist/
+out/
+release/
+artifacts/
+cache/
+coverage/
+.env
+.env.local
+*.log
+apps/desktop/.reactor/

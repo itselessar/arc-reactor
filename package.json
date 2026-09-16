@@ -1,0 +1,22 @@
+{
+  "name": "arc-reactor",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/desktop",
+    "apps/daemon"
+  ],
+  "scripts": {
+    "dev": "npm --workspace @reactor/desktop run dev",
+    "build": "npm --workspace @reactor/desktop run build",
+    "build:daemon": "npm --workspace @reactor/daemon run build",
+    "build:win": "npm --workspace @reactor/desktop run dist:win",
+    "test": "npm --workspace @reactor/desktop run test && npm --workspace @reactor/daemon run test"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.63.3"
+  }
+}

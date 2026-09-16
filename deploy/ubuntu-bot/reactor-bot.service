@@ -1,0 +1,35 @@
+[Unit]
+Description=REACTOR Arc sniper daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=reactor-bot
+Group=reactor-bot
+WorkingDirectory=/opt/reactor-bot
+EnvironmentFile=/etc/reactor-bot.env
+ExecStart=/usr/bin/node /opt/reactor-bot/index.js start
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+RestrictSUIDSGID=true
+RestrictNamespaces=true
+LockPersonality=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
+UMask=0077
+ReadWritePaths=/var/lib/reactor-bot
+
+[Install]
+WantedBy=multi-user.target
